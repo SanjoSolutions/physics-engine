@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Physics engine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="unnamed/createFullDocumentCanvas/createFullDocumentCanvas.css">
+  </head>
+  <body>
+    <script type="module">
+      import { PhysicsEngine, PhysicalObject } from './physics_engine.js'
+      import { visualize } from './visualization.js'
+
+      const physicsEngine = new PhysicsEngine()
+
+      const object1 = new PhysicalObject({
+        position: { x: 100, y: 500 },
+        mass: 1,
+        radius: 10
+      })
+      physicsEngine.addObject(object1)
+
+      const object2 = new PhysicalObject({
+        position: { x: 200, y: 500 },
+        mass: 10,
+        radius: 10
+      })
+      physicsEngine.addObject(object2)
+
+      visualize(physicsEngine)
+    </script>
+  </body>
+</html>
